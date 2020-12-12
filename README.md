@@ -1,8 +1,3 @@
-# Abstract - Case Study 1
-
-<br>
-<br>
-
 ## ASHRAE - Great Energy predictor III
 
 <br>
