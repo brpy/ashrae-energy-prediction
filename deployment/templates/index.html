@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+<title>Ashrae Energy Prediction</title>
+
+<!-- production version, optimized for size and speed -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+
+<body>
+
+  <form
+  id="app"
+  @submit="checkForm"
+  action="/predict"
+  method="post"
+  novalidate="false"
+>
+
+  <p v-if="errors.length">
+    <b>Please correct the following error(s):</b>
+    <ul>
+      <li v-for="error in errors">[[ error ]]</li>
+    </ul>
+  </p>
+
+
+<p>
+  <label for="site">Site Id</label>
+  <select
+    id="site"
+    v-model="site"
+    type="number"
+    name="site"
+    @change="buildingLimit()"
+  >
+<option v-for="site in sites">[[site]]</option>
+</select>
+</p>
+
+  <p>
+    <label for="building">Building Id</label>
+    <select
+      id="building"
+      v-model="building"
+      type="number"
+      name="building"
+    >
+  
+  <option v-for="site in buildingLimit()">[[site]]</option>
+
+  </select>
+  </p>
+
+  <p>
+    <label for="meter">Meter</label>
+    <select
+      id="meter"
+      v-model="meter"
+      type="number"
+      name="meter"
+    >
+  <option>0</option>
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  </select>
+  </p>
+
+  <p>
+    <label for="timestamp">Timestamp</label>
+    <input type="text" name="timestamp" id="timestamp" v-model="timestamp"  placeholder="yyyy/mm/dd HH:mm:ss">
+  </p> ex: 2017/09/24 21:00:00
+
+  <p>
+    <label for="air_temperature">Air temperature</label>
+    <input type="text" name="air_temperature" id="air_temperature" v-model="air_temperature" placeholder="in ℉. Usual range (-28.1,48.3)">
+  </p>
+
+  <p>
+    <label for="cloud_coverage">Cloud coverage</label>
+    <input type="text" name="cloud_coverage" id="cloud_coverage" v-model="cloud_coverage" placeholder="Usual range (0,10)">
+  </p>
+
+  <p>
+    <label for="dew_temperature">Dew temperature</label>
+    <input type="text" name="dew_temperature" id="dew_temperature" v-model="dew_temperature" placeholder="Usual range (-30,25)">
+  </p>
+
+  <p>
+    <label for="precip_depth_1_hr">Precipitation Depth</label>
+    <input type="text" name="precip_depth_1_hr" id="precip_depth_1_hr" v-model="precip_depth_1_hr">
+  </p>
+
+  <p>
+    <label for="sea_level_pressure">Sea Level Pressure</label>
+    <input type="text" name="sea_level_pressure" id="sea_level_pressure" v-model="sea_level_pressure">
+  </p>
+
+  <p>
+    <label for="wind_direction">Wind Direction</label>
+    <input type="text" name="wind_direction" id="wind_direction" v-model="wind_direction">
+  </p>
+  
+  <p>
+    <label for="wind_speed">Wind Speed</label>
+    <input type="text" name="wind_speed" id="wind_speed" v-model="wind_speed">
+  </p>
+
+  <p>
+    <input
+      type="submit"
+      value="Submit"
+    >
+  </p>
+
+</form>
+<script type="text/javascript" src="{{ url_for('static', filename = 'app.js') }}"></script>
+
+</body>
+</html>
