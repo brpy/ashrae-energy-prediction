@@ -20,3 +20,24 @@ A accurate model would provide better incentives for customers to switch to retr
 
 
 Check full abstract [here](./docs/abstract.md)
+
+---
+
+### Machine learning
+
+For Eda, featurization, check full blog [here]() or the notebook directory.
+
+Due to lack of harware resources and practical reasons, I have decided not to use leak data and not use complex ensembles (ensembles of ensembles) that most top competitors have used.
+
+
+I have used various models starting from Linear Regression, Decision Tree, Lightgbm, Adaboost and also a Stacking Regressor. Out of these lgbm gave the best performance on unseen test data. It resulted in RMSLE of 1.360 on private LB and 1.146 on public lb. For scores of other models check images directory.
+
+![lgbm-kaggle](./images/model/kaggle/lgbm.png?raw=true)
+
+---
+
+### Deployment
+
+The best model lgbm is then deployed on GCP using Flask and waitress. For frontend, I used vue js for form validation and conditional dropdown option of Building Id. The predictions were quick (~200ms) even on 2vcpu, 1GB Ram Debian vm.
+
+![deployed](./images/deployed.gif?raw=true)
