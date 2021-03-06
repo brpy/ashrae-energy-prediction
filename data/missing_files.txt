@@ -1,0 +1,15 @@
+# These files are not tracked/ uploaded due to Github's 100MB file size limit
+.
+├── building_df_reduced.pkl
+├── building_metadata.csv
+├── missing_data_files.txt
+├── sample_submission.csv
+├── test.csv
+├── test_reduced.pkl
+├── test_weather_reduced.pkl
+├── train.csv
+├── train_reduced.pkl
+├── train_weather_reduced.pkl
+├── weather_test.csv
+└── weather_train.csv
+
