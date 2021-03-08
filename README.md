@@ -25,7 +25,7 @@ Check full abstract [here](./docs/abstract.md)
 
 ### Machine learning
 
-For Eda, featurization, check full blog [here]() or the notebook directory.
+For Eda, featurization, check full blog [here](https://brpy.github.io/blog/projects/ashrae-energy-prediction) or the notebook directory.
 
 Due to lack of harware resources and practical reasons, I have decided not to use leak data and not use complex ensembles (ensembles of ensembles) that most top competitors have used.
 
