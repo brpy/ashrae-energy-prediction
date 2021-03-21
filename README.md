@@ -41,3 +41,11 @@ I have used various models starting from Linear Regression, Decision Tree, Light
 The best model lgbm is then deployed on GCP using Flask and waitress. For frontend, I used vue js for form validation and conditional dropdown option of Building Id. The predictions were quick (~200ms) even on 2vcpu, 1GB Ram Debian vm.
 
 ![deployed](./images/deployed.gif?raw=true)
+
+---
+
+### Blog
+
+Link to complete blog:
+
+[https://brpy.github.io/blog/projects/ashrae-energy-prediction](https://brpy.github.io/blog/projects/ashrae-energy-prediction)
